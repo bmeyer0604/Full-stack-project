@@ -27,6 +27,9 @@ class Api::ImagesController < ApplicationController
         @image = Image.find(params[:id])
     end
 
+    def update
+    end
+
     def destroy
     end
 

@@ -3,11 +3,6 @@ import React from 'react';
 class ImageGroups extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-
     }
 
     render() {
@@ -18,10 +13,12 @@ class ImageGroups extends React.Component {
                     <h4>MORE TAGS +</h4>
                 </div>
                 <div className="imageGroupButtons">
-                    <button>Oddly Satisfying Featured</button>
-                    <button>Funny</button>
-                    <button>Memes</button>
-                    <button>Science And Tech</button>
+                    <button id="staffPicks"><p>Staff Picks</p><p>Featured</p></button>
+                    <button id="funny">Funny</button>
+                    <button id="memes">Memes</button>
+                    <button id="scienceAndTech">Science And Tech</button>
+                    <button id="gaming">Gaming</button>
+                    <button id="greatOutdoors">The Great Outdoors</button>
                 </div>
             </div>
         )

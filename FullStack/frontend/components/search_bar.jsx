@@ -16,6 +16,7 @@ class SearchBar extends React.Component {
         return(
             <div className="searchBar">
                 <input type="text" value={this.state.test} placeholder="Search for images, #tags, or @users" onChange={this.update("text")} />
+                <img src="/images/search_icon.svg" />
             </div>
         )
     }

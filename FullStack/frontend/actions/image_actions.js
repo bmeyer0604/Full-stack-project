@@ -20,13 +20,13 @@ const removeImage = (imageId) => ({
 })
 
 export const fetchImages = () => dispatch => (
-    APIUtil.fetchImages().then(images => dispatch(receiveAllImages()))
+    APIUtil.fetchImages().then(images => dispatch(receiveAllImages(images)))
 )
 
 export const fetchImage = (id) => dispatch => (
     APIUtil.fetchImage(id).then(image => dispatch(receiveImage(image)))
 )
-
+ 
 export const createPost = (post) => dispatch => (
     APIUtil.createPost(post).then(image => dispatch(receiveImage(image)))
 )

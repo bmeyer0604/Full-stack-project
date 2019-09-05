@@ -5,14 +5,16 @@ import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import ImageGroups from './image_groups';
 import ImageScroller from './images/image_scroller';
+import Footer from './footer';
 
 const App = () => {
     return(
         <div className="mainPage">
             <Navbar />
-            <h3 className="welcomeMessage">Your first stop for memes!</h3>
+            <section className="welcomeMessage">Your first stop for memes!</section>
             <ImageGroups />
             <ImageScroller />
+            <Footer />
         </div>
     )
 }

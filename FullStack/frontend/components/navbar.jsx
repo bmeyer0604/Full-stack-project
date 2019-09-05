@@ -5,11 +5,14 @@ class Navbar extends React.Component {
     render() {
         return (
             <div className="navbarTop">
-                <a href="#"><h2>Picagur</h2></a>
-                <button><img src="../../../images/navbar_button.svg"/>New post</button>
+                <a className="navbarLogo" href="#">Picagur</a>
+                <button className="newPostButton"><img src="/images/newpost_button.svg"/><p>New post</p></button>
                 <SearchBar />
-                <button className="signinButton">Sign in</button>
-                <button>Sign up</button>
+                <div className="navbarRight">
+                    <img className="topImagesIcon" src="/images/top_images_icon.svg"/>
+                    <a className="signinButton">Sign in</a>
+                    <button className="signupButton">Sign up</button>
+                </div>
             </div>
         )
     }
