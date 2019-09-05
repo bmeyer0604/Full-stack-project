@@ -2,7 +2,7 @@
  *
  *= require_tree .
  *= require_self
- */
+ */ 
 h1 {
     color: red;
 }
@@ -13,6 +13,7 @@ h2, h3, h4 {
 
 a {
     cursor: pointer;
+    text-decoration: none;
 }
 
 div {
@@ -135,10 +136,13 @@ body {
 .newPostButton {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .signinButton {
     white-space: nowrap;
+    opacity: 1;
+    text-decoration: none;
     margin-right: 18px;
     margin-top: 10px;
     margin-left: 2px;
@@ -154,6 +158,7 @@ body {
     margin-right: 2px;
     margin-left: -11px;
     min-width: 108px;
+    text-decoration: none;
 }
 
 /* Body */

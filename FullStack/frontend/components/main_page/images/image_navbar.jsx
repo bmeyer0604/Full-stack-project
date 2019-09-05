@@ -14,11 +14,26 @@ class ImageNavbar extends React.Component {
             waterfall: "iconActive",
             uniform: ""
         }
+  
+        this.updateSortedBy = this.updateSortedBy.bind(this);
+        this.updateSortedBySub = this.updateSortedBySub.bind(this);
         this.toggleDropdownOne = this.toggleDropdownOne.bind(this);
         this.toggleDropdownTwo = this.toggleDropdownTwo.bind(this);
         this.toggleAutoplay = this.toggleAutoplay.bind(this);
         this.toggleWaterfall = this.toggleWaterfall.bind(this);
         this.toggleUniform = this.toggleUniform.bind(this);
+    }
+
+    updateSortedBy(value) {
+        this.setState({
+            sortedBy: value
+        })
+    }
+
+    updateSortedBySub(value) {
+        this.setState({
+            sortedBy: value
+        })
     }
 
     toggleDropdownOne() {
@@ -64,17 +79,17 @@ class ImageNavbar extends React.Component {
         return(
             <div className="imageNavbar">
             
-                <div className="dropdowns">
+                <div className="dropdowns">  
                     <span id="dropdown_one" onClick={this.toggleDropdownOne}>
                         {this.state.sortedBy}
                         <div className="dropdown-arrow"></div>
-                        {!this.state.hiddenOne && <DropdownMain />}
+                        {!this.state.hiddenOne && <DropdownMain updateSortedBy={(value) => this.updateSortedBy(value)} />}
                     </span>
                     
                     <span id="dropdown_two" onClick={this.toggleDropdownTwo}>
                         {this.state.sortedBySub}
                         <div className="dropdown-arrow"></div>
-                        {!this.state.hiddenTwo && <SortbyDropdown chosen={this.state.sortedBy}/>}
+                        {!this.state.hiddenTwo && <SortbyDropdown chosen={this.state.sortedBy} updateSortedBySub={(value) => this.updateSortedBySub(value)}/>}
                     </span>
                 </div>
 

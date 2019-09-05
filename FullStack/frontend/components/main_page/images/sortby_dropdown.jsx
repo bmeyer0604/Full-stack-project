@@ -12,19 +12,15 @@ class SortbyDropdown extends React.Component {
             drops = ["TODAY", "WEEK", "MONTH", "YEAR", "ALL TIME"];
         }
 
-        drops = drops.map(drop => {
-            return <DropdownListItem key={drop.id} drop={drop} />
+        let dropItems = drops.map(drop => {
+            return <div className="dropdown-list-item" key={drop.id}>{drop}<div/>
         })
 
         return(
             <div className="dropdown-list" id="dd-list-two">
                 <div className="dropdown-triangle"></div>
-                {this.drops}
                 <ul>
-                    <li className="dropdown-list-item">POPULAR</li>
-                    <li className="dropdown-list-item">NEWEST</li>
-                    <li className="dropdown-list-item">BEST</li>
-                    <li className="dropdown-list-item">RANDOM</li>
+                    {dropItems}
                 </ul>
             </div>
         )

@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class LoginSidebar extends React.Component {
 
     render() {
         return(
             <div className="login-sidebar">
-                <a href="root">back to Picagur</a>
+                <Link to="/"><h2>back to Picagur</h2></Link>
                 <div className="login-sidebar-bottom">
                     <a href="#">terms</a>
                     <a href="#">privacy</a>

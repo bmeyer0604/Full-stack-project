@@ -2,6 +2,10 @@ import React from 'react';
 import ImageListItem from './imageListItem';
 
 class ImageList extends React.Component {
+    componentDidMount() {
+        //this.props.fetchImages();
+    }
+
     render() {
         let column_one = "";
         let column_two = ""; 
