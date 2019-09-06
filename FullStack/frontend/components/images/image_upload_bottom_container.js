@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import React from 'react';
-import ImageForm from './image_form_page';
+import ImageUploadBottom from './image_upload_bottom';
   
 const mapStateToProps = (state) => {
     return {
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImageForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ImageUploadBottom);

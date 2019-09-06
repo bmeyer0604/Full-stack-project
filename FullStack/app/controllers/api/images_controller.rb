@@ -9,7 +9,8 @@ class Api::ImagesController < ApplicationController
         @image = Image.new(image_params)
 
         if @image.save
-            render :show
+            sign_in(@image)
+            render 'api/images/show'
         else
             render json: @image.errors.full_messages, status: 422
         end
@@ -31,6 +32,9 @@ class Api::ImagesController < ApplicationController
     end
 
     def destroy
+        @image = Image.find(params[:id])
+        @image.destroy
+        render :show
     end
 
     private

@@ -1,7 +1,7 @@
 import React from 'react';
 import SortbyDropdown from './sortby_dropdown';
 import DropdownMain from './dropdown_main';
-
+  
 class ImageNavbar extends React.Component {
     constructor(props) {
         super(props);
@@ -22,6 +22,22 @@ class ImageNavbar extends React.Component {
         this.toggleAutoplay = this.toggleAutoplay.bind(this);
         this.toggleWaterfall = this.toggleWaterfall.bind(this);
         this.toggleUniform = this.toggleUniform.bind(this);
+    }
+
+    componentDidMount() {
+        const body = document.getElementsByTagName("body")[0];
+        body.addEventListener("click", (event) => {
+            if(this.state.hiddenOne || this.state.hiddenTwo) {
+                if(!Array.from(event.target.classList).includes("dropdown-list") && 
+                !Array.from(event.target.classList).includes("dropdown-list-item")) {
+                    if(!this.state.hiddenOne) {
+                        this.setState({hiddenOne: true})
+                    } else if (!this.state.hiddenTwo) {
+                        this.setState({hiddenTwo: true})
+                    }
+                }
+            }
+        })
     }
 
     updateSortedBy(value) {

@@ -3,7 +3,7 @@ import React from 'react';
 //Pass in prop that targets the parent's state
 //Give LIs click event listener
 //Widgets (tabs) project
-
+  
 class DropdownMain extends React.Component {
     constructor(props) {
         super(props);

@@ -14,6 +14,9 @@ class Api::AlbumsController < ApplicationController
     end
 
     def destroy
+        @album = Album.find(params[:id])
+        @album.destroy
+        render :show
     end
 
     private
