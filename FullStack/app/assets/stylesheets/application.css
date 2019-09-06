@@ -669,13 +669,10 @@ body {
 .fadeBreaks img {
     height: 3px;
     margin-right: 3px;
-    transform: rotateY(180deg);
 }
 
 .fadeBreaks img:last-child {
-    margin-right: 0;
     margin-left: 3px;
-    transform: rotateY(180deg);
 }
 
 .loginInput {
@@ -815,7 +812,7 @@ body {
 .imageUploadContainer {
     min-width: 480px;
     position: relative;
-    top: 93px;
+    top: 69px;
     right: 18px;
     display: flex;
     flex-direction: column;
@@ -823,12 +820,19 @@ body {
     box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
 }
 
-.imageUploadContainerTop {
+.dropArea {
     height: 320px;
     background: radial-gradient(755px at 77.71% -37.81%,#441b6f 0,rgba(23,23,66,0) 100%),transparent;
     background-color: #ffca41;
     border-radius: 6px 6px 0px 0px;
     overflow: hidden;
+}
+
+.dropArea:-moz-drag-over {
+    background: none;
+    background-color: #441b6f;
+    -webkit-transition: all 500ms ease-in-out;
+        transition: all 500ms ease-in-out;
 }
 
 .dropImageHere {
@@ -874,8 +878,24 @@ body {
     opacity: 1;
 }
 
+.choosePhotoOrVideo {
+    display: flex;
+}
+
 .choosePhotoOrVideo:hover {
     opacity: .8;
+}
+
+.choosePhotoOrVideo span {
+    position: relative;
+    top: 10px;
+    left: 2px;
+}
+
+.choosePhotoOrVideo img {
+    position: relative;
+    right: 8px;
+    top: 3px;
 }
 
 .imageUploadContainerBottom input {

@@ -39,7 +39,7 @@ class SignUpForm extends React.Component {
                     <div className="fadeBreaks">
                         <img src="/images/fading-section-break.png"/>
                         <p className="registerWith">Register with Picagur</p>
-                        <img src="/images/fading-section-break.png"/>
+                        <img src="/images/fading-section-break-reverse.png"/>
                     </div>
 
                     <div className="loginInput">

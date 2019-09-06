@@ -15,7 +15,10 @@ class ImageUploadBottom extends React.Component {
     render() {
         return(
             <div className="imageUploadContainerBottom">
-                <p className="choosePhotoOrVideo">Choose Photo/Video</p>
+                <div className="choosePhotoOrVideo">
+                    <img src="/images/photo_icon.svg"/>
+                    <span>Choose Photo/Video</span>
+                </div>
                 <p>----- or -----</p>
                 <input type="text" value={this.state.imageURL} 
                 onChange={this.update("imageURL")} 

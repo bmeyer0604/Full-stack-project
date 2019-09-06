@@ -4,7 +4,7 @@ import {Route, Switch, Link, HashRouter, Redirect} from 'react-router-dom';
 import LogInFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import MainPage from './main_page/main_page';
-import ImageShowContainer from './images/image_show_container';
+import ImageShowContainer from './images/image_show_pages/image_show_container';
 import ImageForm from './images/image_form_page';
 import AlbumShowContainer from './albums/album_show_container';
 import AlbumFormContainer from './albums/album_form_container';
