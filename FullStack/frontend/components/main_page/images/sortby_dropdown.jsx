@@ -1,5 +1,4 @@
 import React from 'react';
-import DropdownListItem from './dropdown_list_item';
 
 class SortbyDropdown extends React.Component {
     render() {
@@ -13,7 +12,7 @@ class SortbyDropdown extends React.Component {
         }
 
         let dropItems = drops.map(drop => {
-            return <div className="dropdown-list-item" key={drop.id}>{drop}<div/>
+            return <div className="dropdown-list-item" key={drop.id}>{drop}</div>
         })
 
         return(

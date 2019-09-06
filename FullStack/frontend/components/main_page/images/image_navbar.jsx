@@ -100,7 +100,7 @@ class ImageNavbar extends React.Component {
                 </div>
             </div>
         )
-                // square icons taken from Imgur
+                // waterfall and uniform icons taken from Imgur
     }
 }
 

@@ -5,9 +5,12 @@ class LoginSidebar extends React.Component {
 
     render() {
         return(
-            <div className="login-sidebar">
-                <Link to="/"><h2>back to Picagur</h2></Link>
-                <div className="login-sidebar-bottom">
+            <div className="sidebar">
+                <Link to="/" className="backToHomepage">
+                        <img src="/images/back-to-imgur.png" />
+                        <p>back to Picagur</p>
+                </Link>
+                <div className="loginSidebarBottom">
                     <a href="#">terms</a>
                     <a href="#">privacy</a>
                 </div>

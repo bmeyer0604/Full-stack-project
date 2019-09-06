@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import LoginSidebar from './sidebar';
 
@@ -26,17 +27,30 @@ class LoginForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="signupbody">
                 <LoginSidebar />
-                <h1>Picagur</h1>
-                <form className="signin-form" onSubmit={this.handleSubmit}>
-                    <div className="loginInput">
-                    <input type="text" value={this.state.username} 
-                    onChange={this.update("username")} placeholder="Username or Email" />
-                    <input type="password" value={this.state.password} 
-                    onChange={this.update("password")} placeholder="Password" />
+                <form className="signup-subbody" onSubmit={this.handleSubmit}>
+                    <Link to="/"><div className="logo">Picagur</div></Link>
+
+                    <div className="fadeBreaks">
+                        <img src="/images/fading-section-break.png"/>
+                        <p className="registerWith">Sign in with Picagur</p>
+                        <img src="/images/fading-section-break.png"/>
                     </div>
-                    <input type="submit" value={this.props.formType} />
+
+                    <div className="loginInput">
+                        <input type="text" value={this.state.username} 
+                        onChange={this.update("username")} placeholder="Username or Email" />
+                        <div>
+                            <input className="inputPassword" type="password" value={this.state.password} 
+                            onChange={this.update("password")} placeholder="Password" />
+                            <button className="forgotPassword">forgot?</button>
+                        </div>
+                    </div>
+                    <div className="loginInputFooter">
+                        <Link to="/signup">need an account?</Link>
+                        <button><input type="submit" value={this.props.formType} /></button>
+                    </div>
                 </form>
             </div>
         )

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import LoginSidebar from './sidebar';
 
@@ -29,10 +30,18 @@ class SignUpForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="signupbody">
                 <LoginSidebar />
-                <h1>Picagur</h1>
-                <form className="signin-form" onSubmit={this.handleSubmit}>
+
+                <form className="signup-subbody" onSubmit={this.handleSubmit}>
+                    <Link to="/"><div className="logo">Picagur</div></Link>
+
+                    <div className="fadeBreaks">
+                        <img src="/images/fading-section-break.png"/>
+                        <p className="registerWith">Register with Picagur</p>
+                        <img src="/images/fading-section-break.png"/>
+                    </div>
+
                     <div className="loginInput">
                         <input type="text" value={this.state.username} 
                         onChange={this.update("username")} placeholder="Username" />
@@ -43,7 +52,10 @@ class SignUpForm extends React.Component {
                         <input type="password" value={this.state.password_redo} 
                         onChange={this.update("password_redo")} placeholder="Retype Password" />
                     </div>
-                    <input type="submit" value={this.props.formType} />
+                    <div className="loginInputFooter">
+                        <Link to="/login">sign in</Link>
+                        <button><input type="submit" value={this.props.formType} /></button>
+                    </div>
                 </form>
             </div>
         )
