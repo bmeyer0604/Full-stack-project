@@ -3,6 +3,11 @@ class Api::AlbumsController < ApplicationController
         @album = Album.new
     end
 
+    def index
+        @albums = Album.all
+        render :index
+    end
+
     def create
         @album = Album.new(album_params)
 
@@ -22,6 +27,6 @@ class Api::AlbumsController < ApplicationController
     private
 
     def album_params
-        params.require(:album).permit(:title, :url)
+        params.require(:album).permit(:title)
     end
 end

@@ -1,28 +1,27 @@
 import React from 'react';
 import ImageListItem from './imageListItem';
+import ImageListItemContainer from './imageListItemContainer';
 
 class ImageList extends React.Component {
     componentDidMount() {
-        this.props.fetchImages();
+        this.props.fetchAlbums();
     }
 
     render() {
-        let images = this.props.images.map(image => {
+        let albums = this.props.albums.map(album => {
             return(
-                <ImageListItem key={image.id} image={image}/>
+                <ImageListItemContainer key={album.id} album={album}/>
             )
         })
 
-        let column_one = "";
+        let column_one = albums;
         let column_two = ""; 
         let column_three = ""; 
 
         return(
             <div className="imageList">
                 <ul className="imageColumn">
-                    <ImageListItem />
-                    <ImageListItem />
-                    <ImageListItem />
+                    {albums}
                 </ul>
                 <ul className="imageColumn">
                     <ImageListItem />

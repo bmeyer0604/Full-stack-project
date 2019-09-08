@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 import ImageList from './image_list';
-import {fetchImages, deleteImage} from '../../../actions/image_actions';
+import {fetchAlbums, deleteAlbum} from '../../../actions/album_actions';
 
 const mapStateToProps = (state) => {
-    let images = Object.values(state.images);
+    let albums = Object.values(state.albums);
+    console.log(albums);
     return {
-        images: images
+        albums: albums
     };
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchImages: () => dispatch(fetchImages()),
-    deleteImage: (id) => dispatch(deleteImage(id))
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    deleteAlbum: (id) => dispatch(deleteAlbum(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageList);

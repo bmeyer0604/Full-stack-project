@@ -1,10 +1,7 @@
 class Album < ApplicationRecord
-    validates :url, :title, presence: true
+    validates :title, presence: true
     
-    has_many :images,
-        class_name: 'Image',
-        primary_key: :id,
-        foreign_key: :album_id
+    has_many_attached :images
     
     belongs_to :user,
         class_name: 'User',

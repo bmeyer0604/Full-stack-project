@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import NavRightContainer from '../../main_page/nav_right_container';
+import NavRightContainer from '../main_page/nav_right_container';
 
-class ImageShowHeader extends React.Component {
+class AlbumShowHeader extends React.Component {
     render() {
         return(
             <div className="imageShowHeader">
@@ -19,4 +19,4 @@ class ImageShowHeader extends React.Component {
     }
 }
 
-export default ImageShowHeader;
+export default AlbumShowHeader;
