@@ -1,13 +1,13 @@
 import React from 'react';
 import ImageNavbar from './image_navbar';
-import ImageList from './image_list';
+import ImageListContainer from './image_list_container';
 
 class ImageScroller extends React.Component {
     render() {
         return(
             <div className="imageScroller">
                 <ImageNavbar />
-                <ImageList />
+                <ImageListContainer />
             </div>
         )
     }

@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-    validates :url, :description
+    validates :url, :description, presence: true
 
     belongs_to :album, optional: true
     

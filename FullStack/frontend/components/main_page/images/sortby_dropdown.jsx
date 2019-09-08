@@ -1,6 +1,10 @@
 import React from 'react';
   
 class SortbyDropdown extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
         let drops = [];
         if(this.props.sortedBy === "MOST VIRAL") {

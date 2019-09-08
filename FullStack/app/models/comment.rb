@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-    validates :body
+    validates :body, presence: true
     
     belongs_to :image,
         class_name: 'Image',

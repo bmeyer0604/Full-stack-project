@@ -1,5 +1,5 @@
 class Album < ApplicationRecord
-    validates :url, :title
+    validates :url, :title, presence: true
     
     has_many :images,
         class_name: 'Image',
