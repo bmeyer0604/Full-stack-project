@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     let album = state.albums[albumId];
 
     return {
-        album: album
+        album: album,
+        albumId: albumId
     }
 }
 

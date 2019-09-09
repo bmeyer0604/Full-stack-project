@@ -5,6 +5,7 @@ import {fetchComments, fetchComment, deleteComment} from '../../actions/comment_
   
 const mapStateToProps = (state) => {
     let comments = Object.values(state.comments);
+    comments = comments.filter(comment => comment.album_id === ownProps.album.id);
     return {
         comments: comments
     }

@@ -37,6 +37,12 @@ Album.create!(
     title: "cats lol"
 )
 
+Album.create!(
+    id: 3,
+    user_id: 1,
+    title: "I had to make a title for this"
+)
+
 Image.create!(
     id: 1,
     user_id: 1,
@@ -69,6 +75,14 @@ Image.create!(
     description: "i made an album of three of the same cats lolololol"
 )
 
+Image.create!(
+    id: 5,
+    user_id: 1,
+    album_id: 3,
+    url: "/images/memes.jpg",
+    description: "This picture does not need a description"
+)
+
 Comment.create!(
     id: 1,
     user_id: 1,
@@ -81,4 +95,11 @@ Comment.create!(
     user_id: 2,
     album_id: 2,
     body: "no u"
+)
+
+Comment.create!(
+    id: 3,
+    user_id: 1,
+    album_id: 2,
+    body: "Kitties!!!"
 )

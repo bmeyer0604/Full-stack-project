@@ -17,15 +17,26 @@ class ImageList extends React.Component {
                 <ImageListItemContainer key={album.id} album={album}/>
             )
         })
-        albums.forEach(album => {
-            if(album.id % 3 === 0) {
-                column_three.push(album);
-            } else if(album.id % 2 === 0) {
-                column_two.push(album);
+        // albums.forEach(album => {
+        //     if(album.id % 3 === 0) {
+        //         column_three.push(album);
+        //     } else if(album.id % 2 === 0) {
+        //         column_two.push(album);
+        //     } else {
+        //         column_one.push(album);
+        //     }
+        // })
+        for(let i = 0, alb = 1; i < albums.length; i++) {
+            if(alb === 1) {
+                column_one.push(albums[i]);
+            } else if (alb === 2) {
+                column_two.push(albums[i]);
             } else {
-                column_one.push(album);
+                column_three.push(albums[i]);
             }
-        })
+            alb +=1;
+            if(alb === 4) alb = 1;
+        }
         console.log("column one" + column_one);
         console.log(column_two);
         console.log(column_three);

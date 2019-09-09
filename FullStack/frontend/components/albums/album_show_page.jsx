@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 
 import AlbumShowHeader from './album_show_header';
 import AlbumShowSidebar from './album_show_sidebar';
@@ -7,10 +8,8 @@ import CommentsListContainer from '../albums/comments_list_container';
 
 class AlbumShow extends React.Component {
     componentDidMount() {
-        if(this.props.album) {
-            let albumId = this.props.album.id;
-            this.props.fetchAlbum(albumId);
-        }
+        let albumId = this.props.match.params.albumId;
+        this.props.fetchAlbum(albumId);
     }
 
     render() {
@@ -20,7 +19,7 @@ class AlbumShow extends React.Component {
                 <div className="imageShowOuterContainer">
                     <div className="albumShow">
                         <div className="topBarAd">This is an ad</div>
-                        <ImageShowInnerContainer album={this.props.album}/>
+                        <ImageShowInnerContainer album={this.props.album} />
                         <CommentsListContainer />
                     </div>
                     <AlbumShowSidebar />
@@ -30,4 +29,4 @@ class AlbumShow extends React.Component {
     }
 }
 
-export default AlbumShow;
+export default withRouter(AlbumShow);

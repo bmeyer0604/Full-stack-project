@@ -8,22 +8,22 @@ export const fetchImages = () => (
 export const fetchImage = (id) => (
     $.ajax({
         method: "GET",
-        url: `api/posts/${id}`
+        url: `api/images/${id}`
     })
 )
 
-export const createImage = (post) => (
+export const createImage = (image) => (
     $.ajax({
         method: "POST",
-        url: `api/posts`,
+        url: `api/images`,
         data: {image}
     })
 )
 
-export const updateImage = (post) => (
+export const updateImage = (image) => (
     $.ajax({
         method: "PATCH",
-        url: `api/posts/${post.id}`,
+        url: `api/images/${image.id}`,
         data: {image}
     })
 )
@@ -31,6 +31,6 @@ export const updateImage = (post) => (
 export const deleteImage = (id) => (
     $.ajax({
         method: "DELETE",
-        url: `api/posts/${id}`
+        url: `api/images/${id}`
     })
 )

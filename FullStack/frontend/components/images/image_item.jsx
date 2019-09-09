@@ -9,8 +9,8 @@ class ImageItem extends React.Component {
     render() {
         return(
             <div className="imageContainer">
-                <img src="/images/sanic.jpg" />
-                <div className="imageDescription">{this.state.description}</div>
+                <img src={this.props.image.url} />
+                <div className="imageDescription">{this.props.image.description}</div>
             </div>
         )
     }

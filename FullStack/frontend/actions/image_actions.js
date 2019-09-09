@@ -27,12 +27,12 @@ export const fetchImage = (id) => dispatch => (
     APIUtil.fetchImage(id).then(image => dispatch(receiveImage(image)))
 )
  
-export const createPost = (post) => dispatch => (
-    APIUtil.createPost(post).then(image => dispatch(receiveImage(image)))
+export const createImage = (image) => dispatch => (
+    APIUtil.createImage(image).then(image => dispatch(receiveImage(image)))
 )
 
-export const updatePost = (post) => dispatch => (
-    APIUtil.updatePost(post).then(image => dispatch(receiveImage(image)))
+export const updateImage = (image) => dispatch => (
+    APIUtil.updateImage(image).then(image => dispatch(receiveImage(image)))
 )
 
 export const deleteImage = (id) => dispatch => (

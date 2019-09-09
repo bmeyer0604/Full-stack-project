@@ -18,6 +18,11 @@ class Api::AlbumsController < ApplicationController
         end
     end
 
+    def show
+        @album = Album.find(params[:id])
+        render '/api/albums/show'
+    end
+
     def destroy
         @album = Album.find(params[:id])
         @album.destroy
