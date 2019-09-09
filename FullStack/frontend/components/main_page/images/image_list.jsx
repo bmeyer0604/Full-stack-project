@@ -8,30 +8,38 @@ class ImageList extends React.Component {
     }
 
     render() {
+        let column_one = [];
+        let column_two = [];
+        let column_three = [];
+
         let albums = this.props.albums.map(album => {
             return(
                 <ImageListItemContainer key={album.id} album={album}/>
             )
         })
-
-        let column_one = albums;
-        let column_two = ""; 
-        let column_three = ""; 
+        albums.forEach(album => {
+            if(album.id % 3 === 0) {
+                column_three.push(album);
+            } else if(album.id % 2 === 0) {
+                column_two.push(album);
+            } else {
+                column_one.push(album);
+            }
+        })
+        console.log("column one" + column_one);
+        console.log(column_two);
+        console.log(column_three);
 
         return(
             <div className="imageList">
                 <ul className="imageColumn">
-                    {albums}
+                    {column_one}
                 </ul>
                 <ul className="imageColumn">
-                    <ImageListItem />
-                    <ImageListItem />
-                    <ImageListItem />
+                    {column_two}   
                 </ul>
                 <ul className="imageColumn">
-                    <ImageListItem />
-                    <ImageListItem />
-                    <ImageListItem />
+                    {column_three}
                 </ul>
             </div>
         )

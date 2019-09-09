@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import React from 'react';
 import AlbumShow from './album_show_page';
+import {fetchAlbum} from '../../actions/album_actions';
   
 const mapStateToProps = (state, ownProps) => {
     let albumId = ownProps.match.params.albumId;

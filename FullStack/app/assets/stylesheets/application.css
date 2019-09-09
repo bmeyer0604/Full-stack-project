@@ -407,7 +407,6 @@ body {
 
 .imageList {
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 

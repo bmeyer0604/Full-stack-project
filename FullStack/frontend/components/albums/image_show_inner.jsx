@@ -1,13 +1,17 @@
 import React from 'react';
 import ImageItem from '../images/image_item';
 
-class ImageShowInnerContainer extends React.Component {
+class ImageShowInner extends React.Component {
+    componentDidMount() {
+        this.props.fetchImages();
+    }
+
     render() {
         return(
             <div className="imageShowInnerContainer">
                 <div className="ImageContainerHeader">
                     <div className="albumInfo">
-                        <p className="albumTitle">Sanic the hadgehog</p>
+                        <p className="albumTitle">{this.props.album.title}</p>
                         <p className="albumUploadInfo">by Ropfa  via Android  2 hr</p>
                     </div>
                     <div className="scrollImageButtons">
@@ -15,7 +19,7 @@ class ImageShowInnerContainer extends React.Component {
                         <button className="nextImage">Next Post ></button>
                     </div>
                 </div>
-                <ImageItem />
+                <ImageItem album={this.props.album} />
                 <div className="imageShowIcons">
                     <div className="iconsLeft">
 
@@ -29,4 +33,4 @@ class ImageShowInnerContainer extends React.Component {
     }
 }
 
-export default ImageShowInnerContainer;
+export default ImageShowInner;

@@ -19,17 +19,19 @@ class ImageListItem extends React.Component {
             return null;
         }
         return(
-            <Link to={`/albums/${this.props.album.id}`} className="frontPageImageContainer">
-                <img className="frontPageImage" src={"/images/f9agy.jpg"}/>
-                <div className="frontPageImageInfo">
-                    <div className="frontPageImageTitle">Commander Shepard</div>
-                    <div className="frontPageInfoStats">
-                        <div>Upvotes</div>
-                        <div>Comments</div>
-                        <div>Views</div>
+            <div className="frontPageImageContainer">
+                <Link to={`/albums/${this.props.album.id}`}>
+                    <img className="frontPageImage" src={"/images/f9agy.jpg"}/>
+                    <div className="frontPageImageInfo">
+                        <div className="frontPageImageTitle">Commander Shepard</div>
+                        <div className="frontPageInfoStats">
+                            <div>Upvotes</div>
+                            <div>Comments</div>
+                            <div>Views</div>
+                        </div>
                     </div>
-                </div>
-            </Link>
+                </Link>
+            </div>
         )
     }
 }

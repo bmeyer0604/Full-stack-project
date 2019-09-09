@@ -8,16 +8,16 @@ class Api::ImagesController < ApplicationController
     def create
         @image = Image.new(image_params)
 
-        if @image.save
-            sign_in(@image)
-            render 'api/images/show'
+        if @album.save
+            render :show
         else
-            render json: @image.errors.full_messages, status: 422
+            render json: @album.errors.full_messages, status: 422
         end
     end
 
     def index
         @images = Image.all
+        render :index
     end
 
     def show
@@ -40,6 +40,6 @@ class Api::ImagesController < ApplicationController
     private
 
     def image_params
-        params.require(:image).permit(:url, :description)
+        params.require(:image).permit(:url, :description, :album_id)
     end
 end
