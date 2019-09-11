@@ -5,25 +5,18 @@ class ImageListItem extends React.Component {
     constructor(props) {
         super(props);
     }
-
-    componentDidMount() {
-        console.debug('hey', this.props);
-        if(this.props.album) {
-            let albumId = this.props.album.id;
-            this.props.fetchAlbum(albumId);
-        }
-    }
-
+    
     render() {
         if(!this.props.album) {
             return null;
         }
+        console.log(this.props.album.url);
         return(
             <div className="frontPageImageContainer">
-                <Link to={`/albums/${this.props.album.id}`}>
-                    <img className="frontPageImage" src={"/images/f9agy.jpg"}/>
+                <Link to={`/albums/${this.props.album.album_id}`}>
+                    <img className="frontPageImage" src={this.props.album.url}/>
                     <div className="frontPageImageInfo">
-                        <div className="frontPageImageTitle">Commander Shepard</div>
+                        <div className="frontPageImageTitle">{this.props.album.title}</div>
                         <div className="frontPageInfoStats">
                             <div>Upvotes</div>
                             <div>Comments</div>

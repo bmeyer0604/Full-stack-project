@@ -8,7 +8,7 @@ class CommentsList extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchComments();
+        this.props.fetchComments();
     }
 
     update(field) {
@@ -23,6 +23,10 @@ class CommentsList extends React.Component {
     }
 
     render() {
+        let comments = this.props.comments.map(comment => {
+            return <Comment comment={comment} key={comment.id} />
+        })
+
         return(
             <div className="commentsContainer">
                 <div className="createComment">
@@ -45,7 +49,7 @@ class CommentsList extends React.Component {
                 <div className="commentsInfo">
                     {this.state.numOfComments} COMMENTS
                 </div>
-                <div className="commentsList">Lots of comments</div>
+                <div className="commentsList">{comments}</div>
             </div>
         )
     }

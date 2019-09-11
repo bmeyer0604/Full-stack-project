@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageItem from '../images/image_item';
+import ImageItem from './image_item';
 
 class ImageShowInner extends React.Component {
     constructor(props) {
@@ -7,20 +7,24 @@ class ImageShowInner extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchImages();
+        this.props.fetchAlbum(this.props.match.params.albumId);
     }
 
     render() {
         let images = this.props.images.map(image => {
-            return <ImageItem image={image} key={image.id} />
+            return <ImageItem album={this.props.album} image={image} key={image.id} />
         })
+
+        if(!this.props.album) {
+            return <div>Loading...</div>
+        }
 
         return(
             <div className="imageShowInnerContainer">
                 <div className="ImageContainerHeader">
                     <div className="albumInfo">
                         <p className="albumTitle">{this.props.album.title}</p>
-                        <p className="albumUploadInfo">by Ropfa  via Android  2 hr</p>
+                        <p className="albumUploadInfo">by USERNAME HERE  via Android  2 hr</p>
                     </div>
                     <div className="scrollImageButtons">
                         <button className="previousImage">Previous Post</button>

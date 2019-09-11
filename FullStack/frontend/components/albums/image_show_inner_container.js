@@ -1,25 +1,27 @@
 import {connect} from 'react-redux';
 import React from 'react';
+import {withRouter} from 'react-router';
+
 import ImageShowInner from './image_show_inner';
 import {fetchImages, deleteImage} from '../../actions/image_actions';
+import {fetchAlbum} from '../../actions/album_actions';
+import imageSelector from '../../util/image_selector';
   
-const mapStateToProps = (state, ownProps) => {
-    let images = Object.values(state.images)
-    images = images.filter(image => image.album_id === ownProps.album.id);
+const mapStateToProps = (state, ownProps) => { 
+    let albumId = ownProps.match.params.albumId;
+    let album = state.albums[albumId];
+
     return {
-        images: images,
+        images: imageSelector(album, state.images),
+        album: album
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        //fetchAlbumImages, action, util, route, controller, jbuilder
-        //nest get route for images under albums
-        //imageAlbum controller
-        //nest image route under albums in routes
-        fetchImages: () => dispatch(fetchImages()),
+        fetchAlbum: (id) => dispatch(fetchAlbum(id)),
         deleteImage: (id) => dispatch(deleteImage(id))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImageShowInner);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ImageShowInner));

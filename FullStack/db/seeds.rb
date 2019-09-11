@@ -45,32 +45,32 @@ Album.create!(
 
 Image.create!(
     id: 1,
-    user_id: 1,
-    album_id: 1,
+    user_id: 2,
+    album_id: 2,
     url: "/images/cat.jpg",
     description: "it's a cat lol"
 )
 
 Image.create!(
     id: 2,
-    user_id: 2,
-    album_id: 2,
+    user_id: 1,
+    album_id: 1,
     url: "/images/sanic.jpg",
     description: "sanic caek face is a caek face of sanic the hadghog and eh is a video gaem caractar who goes real fast lol"
 )
 
 Image.create!(
     id: 3,
-    user_id: 1,
-    album_id: 1,
+    user_id: 2,
+    album_id: 2,
     url: "/images/cat.jpg",
     description: "this is the same cat"
 )
 
 Image.create!(
     id: 4,
-    user_id: 1,
-    album_id: 1,
+    user_id: 2,
+    album_id: 2,
     url: "/images/cat.jpg",
     description: "i made an album of three of the same cats lolololol"
 )
@@ -86,14 +86,14 @@ Image.create!(
 Comment.create!(
     id: 1,
     user_id: 1,
-    album_id: 2,
+    album_id: 1,
     body: "This is dumb lol"
 )
 
 Comment.create!(
     id: 2,
     user_id: 2,
-    album_id: 2,
+    album_id: 1,
     body: "no u"
 )
 

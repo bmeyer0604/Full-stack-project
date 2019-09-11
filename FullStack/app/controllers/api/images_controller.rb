@@ -8,10 +8,10 @@ class Api::ImagesController < ApplicationController
     def create
         @image = Image.new(image_params)
 
-        if @album.save
+        if @image.save
             render :show
         else
-            render json: @album.errors.full_messages, status: 422
+            render json: @image.errors.full_messages, status: 422
         end
     end
 
@@ -22,6 +22,7 @@ class Api::ImagesController < ApplicationController
 
     def show
         @image = Image.find(params[:id])
+        render :show
     end
 
     def edit
@@ -40,6 +41,6 @@ class Api::ImagesController < ApplicationController
     private
 
     def image_params
-        params.require(:image).permit(:url, :description, :album_id)
+        params.require(:image).permit(:id, :url, :description, :album_id)
     end
 end

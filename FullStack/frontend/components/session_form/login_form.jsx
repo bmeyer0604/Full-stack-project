@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router';
 
 import LoginSidebar from './sidebar';
 
@@ -14,7 +15,7 @@ class LoginForm extends React.Component {
     }
   
     handleSubmit(e) {
-        e.preventDefault;
+        e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
@@ -49,7 +50,7 @@ class LoginForm extends React.Component {
                     </div>
                     <div className="loginInputFooter">
                         <Link to="/signup">need an account?</Link>
-                        <button><input type="submit" value={this.props.formType} /></button>
+                        <button>{this.props.formType}</button>
                     </div>
                 </form>
             </div>
@@ -57,4 +58,4 @@ class LoginForm extends React.Component {
     }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

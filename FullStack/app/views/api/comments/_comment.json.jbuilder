@@ -1,0 +1,1 @@
+json.extract! comment, :id, :body, :album_id, :user_id

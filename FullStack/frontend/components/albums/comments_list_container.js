@@ -3,9 +3,10 @@ import React from 'react';
 import CommentsList from './comments_list';
 import {fetchComments, fetchComment, deleteComment} from '../../actions/comment_actions';
   
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     let comments = Object.values(state.comments);
     comments = comments.filter(comment => comment.album_id === ownProps.album.id);
+
     return {
         comments: comments
     }

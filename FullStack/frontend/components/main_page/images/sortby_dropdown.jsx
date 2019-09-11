@@ -3,20 +3,18 @@ import React from 'react';
 class SortbyDropdown extends React.Component {
     constructor(props) {
         super(props);
+        if(this.props.sortedBy === "MOST VIRAL") {
+            this.state = {drops: ["POPULAR", "NEWEST", "BEST", "RANDOM"]};
+        } else if (this.props.sortedBy === "USER SUBMITTED") {
+            this.state = {drops: ["POPULAR", "RISING", "NEWEST"]};
+        } else if (this.props.sortedBy === "HIGHEST SCORING") {
+            this.state = {drops: ["TODAY", "WEEK", "MONTH", "YEAR", "ALL TIME"]};
+        }
     }
     
     render() {
-        let drops = [];
-        if(this.props.sortedBy === "MOST VIRAL") {
-            drops = ["POPULAR", "NEWEST", "BEST", "RANDOM"]
-        } else if (this.props.sortedBy === "USER SUBMITTED") {
-            drops = ["POPULAR", "RISING", "NEWEST"];
-        } else if (this.props.sortedBy === "HIGHEST SCORING") {
-            drops = ["TODAY", "WEEK", "MONTH", "YEAR", "ALL TIME"];
-        }
-
-        let dropItems = drops.map(drop => {
-            return <div className="dropdown-list-item" key={drop.id}>{drop}</div>
+        let dropItems = this.state.drops.map(drop => {
+            return <li className="dropdown-list-item" onClick={() => this.props.updateSortedBySub(drop)} key={drop}>{drop}</li>
         })
 
         return(

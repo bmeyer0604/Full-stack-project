@@ -4,14 +4,14 @@ export const RECEIVE_ALL_ALBUMS = "RECEIVE_ALL_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const REMOVE_ALBUM = "REMOVE_ALBUM";
 
-const receiveAllAlbums = (albums) => ({
+const receiveAllAlbums = (payload) => ({
     type: RECEIVE_ALL_ALBUMS,
-    albums
+    payload
 })
 
-const receiveAlbum = (album) => ({
+const receiveAlbum = (payload) => ({
     type: RECEIVE_ALBUM,
-    album
+    payload
 })
 
 const removeAlbum = (albumId) => ({

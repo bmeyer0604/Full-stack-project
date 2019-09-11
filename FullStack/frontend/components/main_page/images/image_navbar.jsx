@@ -41,14 +41,22 @@ class ImageNavbar extends React.Component {
     }
 
     updateSortedBy(value) {
+        let value2 = "";
+        if(value === "MOST VIRAL" || value === "USER SUBMITTED") {
+            value2 = "POPULAR";
+        } else if (value === "HIGHEST SCORING") {
+            value2 = "TODAY";
+        }
+
         this.setState({
-            sortedBy: value
+            sortedBy: value,
+            sortedBySub: value2
         })
     }
 
     updateSortedBySub(value) {
         this.setState({
-            sortedBy: value
+            sortedBySub: value
         })
     }
 
@@ -105,7 +113,7 @@ class ImageNavbar extends React.Component {
                     <span id="dropdown_two" onClick={this.toggleDropdownTwo}>
                         {this.state.sortedBySub}
                         <div className="dropdown-arrow"></div>
-                        {!this.state.hiddenTwo && <SortbyDropdown chosen={this.state.sortedBy} updateSortedBySub={(value) => this.updateSortedBySub(value)}/>}
+                        {!this.state.hiddenTwo && <SortbyDropdown sortedBy={this.state.sortedBy} updateSortedBySub={(value) => this.updateSortedBySub(value)}/>}
                     </span>
                 </div>
 
