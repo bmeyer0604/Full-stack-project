@@ -16,7 +16,7 @@ class SignUpForm extends React.Component {
     }
   
     handleSubmit(e) {
-        e.preventDefault;
+        e.preventDefault();
         const user = Object.assign({}, this.state);
         delete user.password_redo;
         this.props.processForm(user);

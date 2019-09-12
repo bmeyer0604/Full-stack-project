@@ -1,21 +1,24 @@
 import {connect} from 'react-redux';
 import React from 'react';
+
 import CommentsList from './comments_list';
-import {fetchComments, fetchComment, deleteComment} from '../../actions/comment_actions';
+import {fetchComment, fetchComments, createComment, deleteComment} from '../../actions/comment_actions';
+import {fetchAlbum} from '../../actions/album_actions';
+import commentSelector from '../../util/comment_selector';
   
 const mapStateToProps = (state, ownProps) => {
-    let comments = Object.values(state.comments);
-    comments = comments.filter(comment => comment.album_id === ownProps.album.id);
-
+    const comments = commentSelector(ownProps.album, state.comments)
     return {
-        comments: comments
+        comments: comments,
+        album: ownProps.album
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return({
+        fetchAlbum: (id) => dispatch(fetchAlbum(id)),
         fetchComments: () => dispatch(fetchComments()),
-        fetchComment: (id) => dispatch(fetchComment(id)),
+        // createComment: (comment) => dispatch(createComment(comment)),
         deleteComment: (id) => dispatch(deleteComment(id))
     })
 }

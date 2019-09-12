@@ -8,7 +8,7 @@ class ImageUploadBottom extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault;
+        e.preventDefault();
     }
 
     update(field) {

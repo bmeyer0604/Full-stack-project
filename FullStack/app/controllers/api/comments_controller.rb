@@ -1,12 +1,16 @@
 class Api::CommentsController < ApplicationController
     before_action :require_signed_in!
 
+    def new
+        @comment = Comment.new
+    end
+
     def create
         @comment = current_user.comments.new(comment_params)
         if @comment.save
             render :show
         else
-            render json: @comment, status: :unprocessable_entity
+            render json: @comment.errors.full_messages, status: 422
         end
     end
 
@@ -31,6 +35,6 @@ class Api::CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:body, :user_id, :album_id)
+        params.require(:comment).permit(:id, :body, :user_id, :album_id)
     end
 end

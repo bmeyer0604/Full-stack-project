@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import ImageItem from './image_item';
 
 class ImageShowInner extends React.Component {
@@ -7,7 +9,9 @@ class ImageShowInner extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAlbum(this.props.match.params.albumId);
+        this.props.fetchImages().then(() => {
+            this.props.fetchAlbum(this.props.match.params.albumId);
+        });
     }
 
     render() {
@@ -27,8 +31,14 @@ class ImageShowInner extends React.Component {
                         <p className="albumUploadInfo">by USERNAME HERE  via Android  2 hr</p>
                     </div>
                     <div className="scrollImageButtons">
-                        <button className="previousImage">Previous Post</button>
-                        <button className="nextImage">Next Post ></button>
+                        { this.props.album.id - 1 !== 0 &&
+                            <Link to={`/albums/${this.props.album.id - 1}`}>
+                                <button className="previousImage">Previous Post</button>
+                            </Link>
+                        }
+                        <Link to={`/albums/${this.props.album.id + 1}`}>
+                            <button className="nextImage">Next Post ></button>
+                        </Link>
                     </div>
                 </div>
 

@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Comment from './comment';
+
 class CommentsList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { commentBody: "", numComments: 0, charsRemaining: 140,
-                        numOfComments: 0, comments: [] }
+        this.state = { commentBody: "", charsRemaining: 140,
+                        numOfComments: this.props.comments.length }
     }
 
     componentDidMount() {

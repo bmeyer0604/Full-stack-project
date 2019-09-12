@@ -103,3 +103,17 @@ Comment.create!(
     album_id: 2,
     body: "Kitties!!!"
 )
+
+Comment.create!(
+    id: 4,
+    user_id: 2,
+    album_id: 3,
+    body: "This is a generic comment."
+)
+
+Comment.create!(
+    id: 5,
+    user_id: 1,
+    album_id: 1,
+    body: "fight me irl"
+)

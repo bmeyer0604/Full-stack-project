@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :images, only: [:index]
     resources :users, only: [:new, :create]
-    resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :comments, only: [:index]
     resources :albums, only: [:new, :create, :index, :show, :destroy] do
       resources :images, except: [:index]
+      resources :comments, except: [:index]
     end
   end
 

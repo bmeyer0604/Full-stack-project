@@ -21,6 +21,7 @@ class Api::AlbumsController < ApplicationController
     def show
         @album = Album.find(params[:id])
         @images = Image.where(album_id: @album.id)
+        @comments = Comment.where(album_id: @album.id)
         render '/api/albums/show'
     end
 
@@ -33,6 +34,6 @@ class Api::AlbumsController < ApplicationController
     private
 
     def album_params
-        params.require(:album).permit(:title, :user_id, image_ids: [])
+        params.require(:album).permit(:title, :user_id, image_ids: [], comment_ids: [])
     end
 end

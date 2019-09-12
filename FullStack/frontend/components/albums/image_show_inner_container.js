@@ -10,15 +10,17 @@ import imageSelector from '../../util/image_selector';
 const mapStateToProps = (state, ownProps) => { 
     let albumId = ownProps.match.params.albumId;
     let album = state.albums[albumId];
+    const images = imageSelector(album, state.images)
 
     return {
-        images: imageSelector(album, state.images),
-        album: album
+        images,
+        album
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        fetchImages: () => dispatch(fetchImages()),
         fetchAlbum: (id) => dispatch(fetchAlbum(id)),
         deleteImage: (id) => dispatch(deleteImage(id))
     }
