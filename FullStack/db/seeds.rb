@@ -14,37 +14,31 @@ Comment.delete_all
 User.create!(
     username: 'guest',
     password: 'password',
-    email: "whatever@domain.com",
-    id: 1
+    email: "whatever@domain.com"
 )
 
 User.create!(
     username: 'DarthSauron',
     password: 'password',
-    email: "thisisanemail@email.com",
-    id: 2
+    email: "thisisanemail@email.com"
 )
 
 Album.create!(
-    id: 1,
     user_id: 1,
     title: "Sanic the hadgehog"
 )
 
 Album.create!(
-    id: 2,
     user_id: 2,
     title: "cats lol"
 )
 
 Album.create!(
-    id: 3,
     user_id: 1,
     title: "I had to make a title for this"
 )
 
 Image.create!(
-    id: 1,
     user_id: 2,
     album_id: 2,
     url: "/images/cat.jpg",
@@ -52,7 +46,6 @@ Image.create!(
 )
 
 Image.create!(
-    id: 2,
     user_id: 1,
     album_id: 1,
     url: "/images/sanic.jpg",
@@ -60,7 +53,6 @@ Image.create!(
 )
 
 Image.create!(
-    id: 3,
     user_id: 2,
     album_id: 2,
     url: "/images/cat.jpg",
@@ -68,7 +60,6 @@ Image.create!(
 )
 
 Image.create!(
-    id: 4,
     user_id: 2,
     album_id: 2,
     url: "/images/cat.jpg",
@@ -76,7 +67,6 @@ Image.create!(
 )
 
 Image.create!(
-    id: 5,
     user_id: 1,
     album_id: 3,
     url: "/images/memes.jpg",
@@ -84,35 +74,30 @@ Image.create!(
 )
 
 Comment.create!(
-    id: 1,
     user_id: 1,
     album_id: 1,
     body: "This is dumb lol"
 )
 
 Comment.create!(
-    id: 2,
     user_id: 2,
     album_id: 1,
     body: "no u"
 )
 
 Comment.create!(
-    id: 3,
     user_id: 1,
     album_id: 2,
     body: "Kitties!!!"
 )
 
 Comment.create!(
-    id: 4,
     user_id: 2,
     album_id: 3,
     body: "This is a generic comment."
 )
 
 Comment.create!(
-    id: 5,
     user_id: 1,
     album_id: 1,
     body: "fight me irl"

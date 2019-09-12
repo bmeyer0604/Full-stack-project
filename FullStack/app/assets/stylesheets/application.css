@@ -30,6 +30,10 @@ input {
     outline: 0;
 }
 
+button input {
+    cursor: pointer;
+}
+
 body {
     margin: 0;
     padding: 0;

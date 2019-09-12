@@ -7,6 +7,10 @@ import ImageShowInnerContainer from './image_show_inner_container';
 import CommentsListContainer from '../albums/comments_list_container';
 
 class AlbumShow extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     componentDidMount() {
         let albumId = this.props.match.params.albumId;
         this.props.fetchAlbum(albumId);

@@ -19,21 +19,21 @@ const removeComment = (commentId) => ({
     commentId
 })
 
-export const fetchComments = () => dispatch => (
-    APIUtil.fetchComments().then(comments => dispatch(receiveAllComments(comments)))
+export const fetchComments = (album_id) => dispatch => (
+    APIUtil.fetchComments(album_id).then(comments => dispatch(receiveAllComments(comments)))
 )
 
 export const fetchComment = (id) => dispatch => (
     APIUtil.fetchComment(id).then(comment => dispatch(receiveComment(comment)))
 )
 
-export const createComment = (comment) => dispatch => (
-    APIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
+export const createComment = (album_id, comment) => dispatch => (
+    APIUtil.createComment(album_id, comment).then(comment => dispatch(receiveComment(comment)))
 )
 
-export const updateComment = (comment) => dispatch => (
-    APIUtil.updateComment(comment).then(comment => dispatch(receiveComment(comment)))
-)
+// export const updateComment = (comment) => dispatch => (
+//     APIUtil.updateComment(comment).then(comment => dispatch(receiveComment(comment)))
+// )
 
 export const deleteComment = (id) => dispatch => (
     APIUtil.deleteComment(id).then(comment => dispatch(removeComment(comment.id)))

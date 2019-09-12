@@ -1,16 +1,22 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import Comment from './comment';
+import CommentsHeader from './comments_header';
 
 class CommentsList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { commentBody: "", charsRemaining: 140,
-                        numOfComments: this.props.comments.length }
+        this.state = { commentBody: "", charsRemaining: 140};
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchComments();
+        this.props.fetchComments().then(() => {
+            this.props.fetchAlbum(this.props.album.id);
+        });
     }
 
     update(field) {
@@ -22,6 +28,18 @@ class CommentsList extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const comment = Object.assign({}, {body: this.state.commentBody,
+            album_id: this.props.album.id});
+        this.props.createComment(1, comment).then(
+            () => this.setState({
+                commentBody: "",
+                charsRemaining: 140
+            })
+        )
+    }
+
+    handleClick() {
+        location.reload();
     }
 
     render() {
@@ -44,13 +62,11 @@ class CommentsList extends React.Component {
 
                         <div className="commentInputFooter">
                             <a href="#">remember the community rules</a>
-                            <button><input type="submit" value="Post"/></button>
+                            <button onClick={this.handleClick}><input type="submit" value="Post"/></button>
                         </div>
                     </form>
                 </div>
-                <div className="commentsInfo">
-                    {this.state.numOfComments} COMMENTS
-                </div>
+                <CommentsHeader numComments={this.props.comments.length} />
                 <div className="commentsList">{comments}</div>
             </div>
         )
