@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import Comment from './comment';
+import CommentContainer from './comment_container';
 import CommentsHeader from './comments_header';
 
 class CommentsList extends React.Component {
@@ -58,7 +58,7 @@ class CommentsList extends React.Component {
 
     render() {
         let comments = this.props.comments.map(comment => {
-            return <Comment comment={comment} key={comment.id} />
+            return <CommentContainer comment={comment} key={comment.id} />
         })
 
         let charsRemaining = this.state.charsRemaining;
