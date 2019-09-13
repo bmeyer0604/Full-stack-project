@@ -24,8 +24,13 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
-    "dev": "webpack --watch --mode=development"
+    "dev": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
