@@ -20,14 +20,27 @@ class CommentsList extends React.Component {
     }
 
     update(field) {
-        return (e) => this.setState({
-            commentBody: e.target.value,
-            charsRemaining: this.state.charsRemaining - 1
-        })
+        return (e) => {
+            let comment = this.state.commentBody;
+            let inputBody = e.target.value;
+
+            if (inputBody.length < comment.length) {
+                this.setState({
+                    commentBody: e.target.value,
+                    charsRemaining: 140 - inputBody.length
+                })
+            } else {
+                this.setState({
+                    commentBody: e.target.value,
+                    charsRemaining: this.state.charsRemaining - 1
+                })
+            }
+        }
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        if(this.state.charsRemaining < 0) return;
         const comment = Object.assign({}, {body: this.state.commentBody,
             album_id: this.props.album.id});
         this.props.createComment(1, comment).then(
@@ -39,6 +52,7 @@ class CommentsList extends React.Component {
     }
 
     handleClick() {
+        if(this.state.charsRemaining < 0) return;
         location.reload();
     }
 
@@ -46,6 +60,16 @@ class CommentsList extends React.Component {
         let comments = this.props.comments.map(comment => {
             return <Comment comment={comment} key={comment.id} />
         })
+
+        let charsRemaining = this.state.charsRemaining;
+        let clickButton = "";
+        if(this.state.charsRemaining >= 0 && this.state.charsRemaining !== 140) {
+            charsRemaining = <span className="charsRemaining">{this.state.charsRemaining}</span>
+            clickButton = <button onClick={this.handleClick}><input type="submit" value="Post"/></button>
+        } else {
+            charsRemaining = <span className="charsRemaining-over">{this.state.charsRemaining}</span>
+            clickButton = <button className="buttonDisabled">Post</button>
+        }
 
         return(
             <div className="commentsContainer">
@@ -57,12 +81,12 @@ class CommentsList extends React.Component {
                             onChange={this.update("commentBody")} 
                             placeholder="Write a comment" />
 
-                            <span className="charsRemaining">{this.state.charsRemaining}</span>
+                            {charsRemaining}
                         </div>
 
                         <div className="commentInputFooter">
                             <a href="#">remember the community rules</a>
-                            <button onClick={this.handleClick}><input type="submit" value="Post"/></button>
+                            {clickButton}
                         </div>
                     </form>
                 </div>
