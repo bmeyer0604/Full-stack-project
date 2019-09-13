@@ -650,7 +650,6 @@ body {
 
 .logo {
     position: relative;
-    margin: 0 auto 90px;
     color: #ffff;
     font-size: 60px;
     font-weight: 1000;
@@ -1018,7 +1017,6 @@ body {
 }
 
 .topBarAd {
-    margin 0 auto 20px;
     width: 728px;
     height: 90px;
     text-align: center;
