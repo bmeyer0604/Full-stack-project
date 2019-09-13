@@ -10,7 +10,7 @@ class ImageListItem extends React.Component {
         if(!this.props.album) {
             return null;
         }
-        console.log(this.props.album.url);
+
         return(
             <div className="frontPageImageContainer">
                 <Link to={`/albums/${this.props.album.album_id}`}>

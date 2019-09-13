@@ -10,7 +10,6 @@ class ImageList extends React.Component {
     render() {
 
         let albums = this.props.albums.map(album => {
-            console.log(album);
             return(
                 <ImageListItemContainer key={album.id} album={album}/>
             )

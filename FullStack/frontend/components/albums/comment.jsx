@@ -5,12 +5,7 @@ class Comment extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        // this.props.fetchUser(this.props.comment.user_id);
-    }
-
     render() {
-        debugger;
         return(
             <div className="commentBody">
                 <div className="commentHeader">

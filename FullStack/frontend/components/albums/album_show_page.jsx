@@ -23,7 +23,7 @@ class AlbumShow extends React.Component {
                 <div className="imageShowOuterContainer">
                     <div className="albumShow">
                         <div className="topBarAd">This is an ad</div>
-                        <ImageShowInnerContainer album={this.props.album} />
+                        <ImageShowInnerContainer />
                         <CommentsListContainer album={this.props.album} />
                     </div>
                     <AlbumShowSidebar />

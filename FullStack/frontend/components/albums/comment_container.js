@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import React from 'react';
 
 import Comment from './comment';
-// import {fetchUser} from '../../actions/user_actions';
   
 const mapStateToProps = (state, ownProps) => {
     let userId = ownProps.comment.user_id;
@@ -15,10 +14,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        // fetchUser: (id) => dispatch(fetchUser(id))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Comment);
+export default connect(mapStateToProps,)(Comment);

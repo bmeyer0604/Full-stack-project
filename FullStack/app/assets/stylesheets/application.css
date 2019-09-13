@@ -1036,7 +1036,18 @@ body {
 }
 
 .albumInfo {
+    margin-top: 20px;
     margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.imageHeaderAuthor {
+    display: flex;
+    font-size: 12px;
+}
+
+.imageHeaderAuthor .commentHeaderUsername {
+    padding-left: 5px;
 }
 
 .scrollImageButtons {
@@ -1222,6 +1233,7 @@ body {
 
 .commentHeaderUsername {
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .commentHeaderUsername:hover {

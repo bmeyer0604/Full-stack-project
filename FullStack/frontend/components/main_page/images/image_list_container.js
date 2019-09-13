@@ -4,7 +4,6 @@ import {fetchAlbums, deleteAlbum} from '../../../actions/album_actions';
 
 const mapStateToProps = (state) => {
     let albums = Object.values(state.albums);
-    console.log(albums);
     return {
         albums: albums
     };

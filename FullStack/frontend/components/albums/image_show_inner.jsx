@@ -27,8 +27,12 @@ class ImageShowInner extends React.Component {
             <div className="imageShowInnerContainer">
                 <div className="ImageContainerHeader">
                     <div className="albumInfo">
-                        <p className="albumTitle">{this.props.album.title}</p>
-                        <p className="albumUploadInfo">by USERNAME HERE  via Android  2 hr</p>
+                        <div className="albumTitle">{this.props.album.title}</div>
+                        <div className="imageHeaderAuthor">
+                            by 
+                            <div className="commentHeaderUsername">{this.props.album.user.username}</div>
+                            via Android  2 hr
+                        </div>
                     </div>
                     <div className="scrollImageButtons">
                         { this.props.album.id - 1 !== 0 &&
