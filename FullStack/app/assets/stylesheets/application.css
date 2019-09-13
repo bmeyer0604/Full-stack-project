@@ -335,7 +335,7 @@ body {
 .dropdown-list {
     border-radius: 6px;
     background-color: #53565d;
-    box-shadow: 0 9px 25px 0 rgba(0,0,0.78);
+    box-shadow: 0 9px 25px 0 rgba(0,0,0,.78);
     padding-top: 5px;
     color: #fff;
     font-size: 16px;
@@ -536,7 +536,7 @@ body {
     display: flex;
     border-radius: 6px;
     background-color: #474a51;
-    box-shadow: 0 9px 25px 0 rgba(0,0,0.78);
+    box-shadow: 0 9px 25px 0 rgba(0,0,0,.78);
     padding-top: 5px;
     color: #fff;
     font-size: 16px;
