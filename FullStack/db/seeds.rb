@@ -12,7 +12,7 @@ Album.delete_all
 Comment.delete_all
 
 User.create!(
-    username: 'guest',
+    username: 'FirstUser',
     password: 'password',
     email: "whatever@domain.com"
 )
@@ -36,6 +36,16 @@ Album.create!(
 Album.create!(
     user_id: 1,
     title: "I had to make a title for this"
+)
+
+Album.create!(
+    user_id: 2,
+    title: "Owls"
+)
+
+Album.create!(
+    user_id: 1,
+    title: "lol"
 )
 
 Image.create!(
@@ -73,6 +83,48 @@ Image.create!(
     description: "This picture does not need a description"
 )
 
+Image.create!(
+    user_id: 2,
+    album_id: 4,
+    url: "/images/orly.jpg",
+    description: "Owls"
+)
+
+Image.create!(
+    user_id: 2,
+    album_id: 4,
+    url: "/images/yarly.png",
+    description: "Owls"
+)
+
+Image.create!(
+    user_id: 1,
+    album_id: 5,
+    url: "/images/eclipse.jpg",
+    description: "lol"
+)
+
+Image.create!(
+    user_id: 1,
+    album_id: 5,
+    url: "/images/jonsnow.png",
+    description: "lol"
+)
+
+Image.create!(
+    user_id: 1,
+    album_id: 5,
+    url: "/images/toystory.jpg",
+    description: "lol"
+)
+
+Image.create!(
+    user_id: 1,
+    album_id: 5,
+    url: "/images/bug.png",
+    description: "lol"
+)
+
 Comment.create!(
     user_id: 1,
     album_id: 1,
@@ -101,4 +153,22 @@ Comment.create!(
     user_id: 1,
     album_id: 1,
     body: "fight me irl"
+)
+
+Comment.create!(
+    user_id: 1,
+    album_id: 4,
+    body: "Owls are pretty cool."
+)
+
+Comment.create!(
+    user_id: 1,
+    album_id: 5,
+    body: "LOL!"
+)
+
+Comment.create!(
+    user_id: 2,
+    album_id: 5,
+    body: "Did you seriously just comment on your own post?"
 )
