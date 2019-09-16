@@ -4,7 +4,7 @@ Picagur is an image-hosting site where users can create albums filled with pictu
 
 Link: https://picagur-fullstackproject.herokuapp.com/
 
-<img src="public/images/mainPage.png"/>
+<img src="https://github.com/ropfa0604/Full-stack-project/blob/master/FullStack/public/images/mainPage.png"/>
 
 Picagur uses Ruby on Rails on the backend and JavaScript React on the frontend.
 
@@ -46,4 +46,4 @@ update(field) {
     }
 }
 ```
-<img src="/images/albumPage.png"/>
+<img src="https://github.com/ropfa0604/Full-stack-project/blob/master/FullStack/public/images/albumPage.png"/>
