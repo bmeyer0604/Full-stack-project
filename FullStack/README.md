@@ -2,7 +2,7 @@
 
 Picagur is an image-hosting site where users can create albums filled with pictures and then comment on those of others.
 
-Link: https://picagur-fullstackproject.herokuapp.com/
+Link: https://picagur-fullstackproject.herokuapp.com/#/
 
 <img src="https://github.com/ropfa0604/Full-stack-project/blob/master/FullStack/public/images/mainPage.png"/>
 
